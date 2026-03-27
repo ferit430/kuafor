@@ -1,0 +1,28 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@latest"
+    },
+    "backend/api/**/*.php": {
+      "runtime": "vercel-php@latest"
+    },
+    "*.php": {
+      "runtime": "vercel-php@latest"
+    },
+    "customer/*.php": {
+      "runtime": "vercel-php@latest"
+    },
+    "salon/*.php": {
+      "runtime": "vercel-php@latest"
+    },
+    "admin/*.php": {
+      "runtime": "vercel-php@latest"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(api|backend/api)/(.*)",
+      "dest": "/$1/$2.php"
+    }
+  ]
+}
