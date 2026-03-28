@@ -1,7 +1,7 @@
 <?php
 // salon/login.php
 session_start();
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 if (isset($_SESSION['salon_owner_id'])) {
     header("Location: index.php");

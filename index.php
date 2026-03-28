@@ -1,6 +1,6 @@
 <?php
 // index.php - Dynamic High Fidelity Site
-require_once 'backend/config/db.php';
+require_once __DIR__ . '/backend/config/db.php';
 
 // Site ayarlarını çek
 $settings = $pdo->query("SELECT * FROM settings LIMIT 1")->fetch();

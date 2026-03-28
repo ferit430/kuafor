@@ -1,7 +1,7 @@
 <?php
 // customer/login.php
 session_start();
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 // Site ayarlarını çek
 $settings = $pdo->query("SELECT * FROM settings LIMIT 1")->fetch();

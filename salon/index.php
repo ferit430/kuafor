@@ -5,7 +5,7 @@ if (!isset($_SESSION['salon_owner_id'])) {
     header("Location: login.php");
     exit;
 }
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 $owner_id = $_SESSION['salon_owner_id'];
 

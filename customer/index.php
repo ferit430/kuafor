@@ -5,7 +5,7 @@ if (!isset($_SESSION['customer_id'])) {
     header("Location: login.php");
     exit;
 }
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 $customer_id = $_SESSION['customer_id'];
 

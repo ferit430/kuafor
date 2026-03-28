@@ -1,7 +1,7 @@
 <?php
 // customer/register.php
 session_start();
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 $message = "";
 $success = false;
