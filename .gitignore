@@ -1,0 +1,9 @@
+tmp/
+node_modules/
+*.zip
+*.sql
+.DS_Store
+XAMPP/
+php/
+vender/
+composer.lock
