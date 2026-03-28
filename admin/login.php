@@ -6,6 +6,7 @@ if (isset($_SESSION['admin_logged_in'])) {
     header("Location: index.php");
     exit;
 }
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 $error = "";
 
@@ -71,25 +72,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <div class="login-card">
-        <div class="user-avatar">
-            <i class="fas fa-user-lock"></i>
-        </div>
-        <h2>Admin Girişi</h2>
-        
-        <?php if ($error): ?>
-            <div class="alert"><?php echo $error; ?></div>
-        <?php endif; ?>
-
-        <form method="POST">
-            <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="Şifre" required autofocus>
+    <div class="overlay">
+        <div class="login-card">
+            <div class="user-avatar">
+                <i class="fas fa-user-lock"></i>
             </div>
-            <button type="submit" class="btn-primary">Giriş Yap</button>
-        </form>
+            <h2>Admin Girişi</h2>
+            
+            <?php if ($error): ?>
+                <div class="alert"><?php echo $error; ?></div>
+            <?php endif; ?>
 
-        <div class="footer-links">
-            <a href="../index.php"><i class="fas fa-arrow-left mr-1"></i> Siteye Dön</a>
+            <form method="POST">
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="Şifre" required autofocus>
+                </div>
+                <button type="submit" class="btn-primary-mac" style="width: 100%;">Giriş Yap</button>
+            </form>
+
+            <div class="footer-links">
+                <a href="../index.php"><i class="fas fa-arrow-left mr-1"></i> Siteye Dön</a>
+            </div>
         </div>
     </div>
 </body>

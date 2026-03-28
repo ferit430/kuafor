@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit;
 }
-require_once '../backend/config/db.php';
+require_once dirname(__DIR__) . '/backend/config/db.php';
 
 // İstatistikleri al
 $salonCount = $pdo->query("SELECT COUNT(*) FROM salons")->fetchColumn();
