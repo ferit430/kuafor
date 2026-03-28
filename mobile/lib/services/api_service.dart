@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://10.0.2.2/Berberim/Berberim/backend/api';
-  static const String baseMediaUrl = 'http://10.0.2.2/Berberim/Berberim/';
+  static const String baseUrl = 'https://kuafor-ockqhgftm-feritdemirinfo-9308s-projects.vercel.app/backend/api';
+  static const String baseMediaUrl = 'https://kuafor-ockqhgftm-feritdemirinfo-9308s-projects.vercel.app/';
   static String? token;
 
   static Future<void> init() async {
