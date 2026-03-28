@@ -7,7 +7,7 @@ require_once dirname(__DIR__) . '/backend/config/db.php';
 $settings = $pdo->query("SELECT * FROM settings LIMIT 1")->fetch();
 
 if (isset($_SESSION['customer_id'])) {
-    header("Location: index.php");
+    header("Location: /customer/index.php");
     exit;
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['customer_id'] = $user['id'];
         $_SESSION['customer_name'] = $user['name'];
-        header("Location: index.php");
+        header("Location: /customer/index.php");
         exit;
     } else {
         $error = "E-posta veya şifre hatalı!";

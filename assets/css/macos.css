@@ -52,23 +52,19 @@ body::before {
 
 .overlay {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-.container {
-    width: 95%;
-    max-width: 1200px;
-    background: var(--mac-glass);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid var(--mac-border);
-    border-radius: 40px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
-    padding: 40px;
+.login-card {
+    margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
 /* Dashboard Layout Classes */

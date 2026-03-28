@@ -2,7 +2,7 @@
 // salon/index.php
 session_start();
 if (!isset($_SESSION['salon_owner_id'])) {
-    header("Location: login.php");
+    header("Location: /salon/login.php");
     exit;
 }
 require_once dirname(__DIR__) . '/backend/config/db.php';

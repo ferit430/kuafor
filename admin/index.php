@@ -2,7 +2,7 @@
 // admin/index.php - Updated with Certificate Verification
 session_start();
 if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: login.php");
+    header("Location: /admin/login.php");
     exit;
 }
 require_once dirname(__DIR__) . '/backend/config/db.php';

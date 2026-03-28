@@ -2,7 +2,7 @@
 // customer/index.php
 session_start();
 if (!isset($_SESSION['customer_id'])) {
-    header("Location: login.php");
+    header("Location: /customer/login.php");
     exit;
 }
 require_once dirname(__DIR__) . '/backend/config/db.php';

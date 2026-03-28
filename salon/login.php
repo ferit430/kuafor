@@ -4,7 +4,7 @@ session_start();
 require_once dirname(__DIR__) . '/backend/config/db.php';
 
 if (isset($_SESSION['salon_owner_id'])) {
-    header("Location: index.php");
+    header("Location: /salon/index.php");
     exit;
 }
 

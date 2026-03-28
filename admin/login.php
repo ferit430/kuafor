@@ -3,7 +3,7 @@
 session_start();
 
 if (isset($_SESSION['admin_logged_in'])) {
-    header("Location: index.php");
+    header("Location: /admin/index.php");
     exit;
 }
 require_once dirname(__DIR__) . '/backend/config/db.php';
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Şifre: "1"
     if ($password === '1') {
         $_SESSION['admin_logged_in'] = true;
-        header("Location: index.php");
+        header("Location: /admin/index.php");
         exit;
     } else {
         $error = "Hatalı şifre!";
