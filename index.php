@@ -334,7 +334,7 @@ $settings = $pdo->query("SELECT * FROM settings LIMIT 1")->fetch();
                     <img src="assets/img/women_hairdresser.png" alt="Kadın Kuaförü">
                 </div>
                 <div class="hero-text">
-                    <h1>Sıra Bekleme <br> Dönemi Kapandı.</h1>
+                    <h1 class="text-gradient">Sıra Bekleme <br> Dönemi Kapandı.</h1>
                     <p>KUAFÖR RANDEVU ile dilediğiniz salondan, dilediğiniz personelden saniyeler içinde randevu alın.
                         İşletmenizi modern teknoloji ile büyütün.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">

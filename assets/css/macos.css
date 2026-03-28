@@ -2,56 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    --mac-blue: #007AFF;
-    --mac-glass: rgba(255, 255, 255, 0.15);
-    --mac-border: rgba(255, 255, 255, 0.2);
-    --mac-bg-dark: rgba(0, 0, 0, 0.25);
+    --mac-blue: #06b6d4;
+    --mac-purple: #7c3aed;
+    --mac-glass: rgba(255, 255, 255, 0.03);
+    --mac-border: rgba(255, 255, 255, 0.1);
+    --mac-bg-dark: rgba(0, 0, 0, 0.4);
     --mac-text: #FFFFFF;
-    --mac-text-dim: rgba(255, 255, 255, 0.6);
+    --mac-text-dim: rgba(255, 255, 255, 0.5);
+    --mac-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
     min-height: 100vh;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #1d1e22 0%, #3a3d44 100%);
-    overflow-x: hidden; /* Prevent global horizontal scroll but allow local */
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    -webkit-font-smoothing: antialiased;
+    background: #0f172a;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Mesh Gradient Background */
+/* Vibrant Mesh Gradient Background */
 body::before {
     content: "";
-    position: fixed; /* Keep it relative to viewport, not content */
-    top: -50%;
-    left: -50%;
-    width: 200%; 
-    height: 200%;
-    background: radial-gradient(circle at 30% 30%, #4facfe 0%, transparent 40%),
-                radial-gradient(circle at 70% 70%, #8e44ad 0%, transparent 40%),
-                radial-gradient(circle at 20% 80%, #2ecc71 0%, transparent 40%);
-    filter: blur(80px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.3) 0px, transparent 50%),
+        radial-gradient(at 50% 0%, rgba(124, 58, 237, 0.3) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.3) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.3) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(79, 70, 229, 0.3) 0px, transparent 50%);
     z-index: -1;
-    animation: mesh-anim 20s infinite alternate linear;
-}
-
-@keyframes mesh-anim {
-    from { transform: translate(-10%, -10%) rotate(0deg); }
-    to { transform: translate(10%, 10%) rotate(15deg); }
 }
 
 .overlay {
@@ -61,22 +51,18 @@ body::before {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background: rgba(0, 0, 0, 0.2);
-    /* Ensure child container is centered */
 }
 
 .container {
     width: 95%;
-    max-width: 1400px;
+    max-width: 1200px;
     background: var(--mac-glass);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--mac-border);
-    border-radius: 28px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    border-radius: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 40px;
-    color: var(--mac-text);
-    margin: auto; /* Centering fallback */
 }
 
 /* Dashboard Layout Classes */
@@ -176,71 +162,60 @@ body::before {
     box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.2);
 }
 
-.btn-primary {
-    width: 100%;
-    padding: 14px;
-    background: var(--mac-blue);
-    border: none;
-    border-radius: 14px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-primary:hover {
-    background: #0063CC;
-    transform: translateY(-1px);
-}
-
-/* Navigation & Tables */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--mac-border);
-    padding-bottom: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-
-th {
-    text-align: left;
-    padding: 10px 15px;
-    color: var(--mac-text-dim);
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-tr td {
+.btn-glass {
+    padding: 12px 25px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
 }
 
-tr td:first-child { border-radius: 12px 0 0 12px; }
-tr td:last-child { border-radius: 0 12px 12px 0; }
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 50px; /* More space at bottom */
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
-.card {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid var(--mac-border);
+.btn-primary-mac {
+    padding: 12px 30px;
+    background: #007bff;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+.btn-primary-mac:hover {
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background: #fff;
+    border-radius: 50px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    transform: scale(1.05);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Rest of the styles... */
